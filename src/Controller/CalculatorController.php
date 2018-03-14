@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Calculation;
 use App\Form\CalculationType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,13 +19,15 @@ class CalculatorController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            die('form submitted.');
-            // Save the calculation to the db
+            $request = $request->request->get('calculation');
+            $calculation = new Calculation($request['inputA'], $request['inputB'], $request['operator']);
+
+            dump($calculation->calculateResult());
+            die;
         }
 
         return $this->render('calculator.twig', [
             'form' => $form->createView()
         ]);
     }
-
 }
