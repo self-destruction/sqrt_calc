@@ -20,12 +20,22 @@ class CalculationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('inputA', IntegerType::class)
-            ->add('operator', ChoiceType::class, [
-                'choices' => CalculationType::$operators
-            ])
-            ->add('inputB', IntegerType::class)
-            ->add('submit', SubmitType::class);
+            ->add(
+                'inputA',
+                IntegerType::class
+            )
+            ->add(
+                'operator',
+                ChoiceType::class,
+                ['choices' => CalculationType::$operators]
+            )
+            ->add(
+                'inputB',
+                IntegerType::class)
+            ->add(
+                'submit',
+                SubmitType::class
+            );
     }
 
 }
