@@ -1,8 +1,15 @@
-<h1>This is where my calculator will live!!</h1>
+{% extends "base.html.twig" %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-{{ form_start(form) }}
-    {{ form_widget(form.inputA) }}
-    {{ form_widget(form.operator) }}
-    {{ form_widget(form.inputB) }}
-    {{ form_widget(form.submit) }}
-{{ form_end(form) }}
+{% block body %}
+<div class="container">
+    <h1>Let&apos;s calculate.</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.inputA) }}
+        {{ form_row(form.operator) }}
+        {{ form_row(form.inputB) }}
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+</div>
+{% endblock %}
