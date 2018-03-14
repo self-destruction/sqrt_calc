@@ -13,7 +13,7 @@ class CalculationType extends AbstractType
 
     public static $operators = [
         'Multiply' => '*',
-        'Add' => '*',
+        'Add' => '+',
         'Subtract' => '-',
     ];
 
