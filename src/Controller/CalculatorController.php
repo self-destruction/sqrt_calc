@@ -22,7 +22,7 @@ class CalculatorController extends Controller
             // Save the calculation to the db
         }
 
-        return $this->render('calculator/form.html.twig', [
+        return $this->render('calculator.twig', [
             'form' => $form->createView()
         ]);
     }
