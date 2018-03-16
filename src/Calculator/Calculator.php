@@ -8,10 +8,6 @@ class Calculator
 
     private $result;
 
-
-    /**
-     * Calculator constructor.
-     */
     public function __construct()
     {
         $this->result = null;
@@ -22,7 +18,7 @@ class Calculator
      * @param null $result
      * @return Calculator
      */
-    public function setResult($result)
+    public function setResult($result) : Calculator
     {
         $this->result = $result;
         return $this;
