@@ -1,15 +1,60 @@
 {% extends "base.html.twig" %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-{% block body %}
-<div class="container">
-    <h1>Let&apos;s calculate.</h1>
+{% block stylesheets %}
+    <style>
 
-    {{ form_start(form) }}
-        {{ form_row(form.inputA) }}
-        {{ form_row(form.operator) }}
-        {{ form_row(form.inputB) }}
-        {{ form_row(form.submit) }}
-    {{ form_end(form) }}
+        * {
+            font-size: 2em;
+            font-family: 'Courier';
+        }
+
+        footer {
+            font-size: 0.4em;
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            bottom: 0em;
+            text-align: center;
+            background: #999;
+            padding: 0.25em;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        moveCursorToEnd($('#display_equation'));
+
+        function moveCursorToEnd(input) {
+            var originalValue = input.val();
+            input.val('');
+            input.blur().focus().val(originalValue);
+        }
+
+    </script>
+{% endblock %}
+
+
+{% block body %}
+<div class="container h-100">
+    <div class="Calculator row h-100 row align-items-center">
+        <div class="Screen col-sm">
+            {{ form_start(form) }}
+            <div class="input-group">
+                {{ form_widget(form.equation) }}
+                <div class="input-group-prepend">
+                {{ form_widget(form.submit) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+        <div class="Result col-sm">
+            {{ result }}
+        </div>
+    </div>
 </div>
+    <footer>
+        e.g. (1+5) * (3+2) / 5
+    </footer>
 {% endblock %}
