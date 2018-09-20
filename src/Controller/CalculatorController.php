@@ -7,6 +7,7 @@ use App\Form\Calculator\DisplayType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use WolframAlpha\Engine;
 
 class CalculatorController extends Controller
 {
@@ -55,12 +56,52 @@ class CalculatorController extends Controller
         }
 
         $calculator = $this->get(Calculator::class);
-        $calculator->setEquation($request->get('equation'));
+//        $calculator->setEquation($request->get('equation'));
+        $equation = (string)$request->get('equation');
+//        var_dump($equation);
+
+//        echo "calculator->getEquation()\n";
+//        var_dump($calculator->getEquation());
+
+        $engine = new Engine('YTV5WQ-TP29ARPJ2W');
+
+        $result = $engine->process('Floor(sqrt(' . $equation . '), 1E-5)', [], ['plaintext']); //&includepodid=DecimalApproximation
+
+        if($result->hasWarnings())
+        {
+            foreach($result->getWarnings() as $name => $message)
+            {
+                echo $name . ': ' . $message;
+            }
+        }
+
+        echo 'Result success? ' . (string)$result->success . "\n";
+
+        if($result->hasError())
+        {
+            echo 'Error ' . $result->getError()['code'] . ': ' . $result->getError()['message'];
+        }
+
+//        echo 'Floor(sqrt(' . $equation . '), 1E-5)'. "\n";
+
+//        var_dump($result->pods['DecimalApproximation']->subpods[0]->plaintext);
+
+//        var_dump($result->pods['Result']->subpods[0]->plaintext);
+//        foreach ($result->pods['DecimalApproximation']->subpods as $subpods) {
+//            var_dump($subpods);
+//        }
+        $result = [];
+
+        foreach ($result->pods['Result']->subpods as $subpod) {
+            $result[] = implode('*', explode(' ', $subpod->plaintext));
+        }
+
+        var_dump($result);
 
         return $this->render('calculator.twig', [
             'form' => $form->createView(),
             'equation' => $calculator->getEquation(),
-            'result' => $calculator->getResult(),
+            'result' => $result->pods['DecimalApproximation']->subpods[0]->plaintext,
         ]);
     }
 }
