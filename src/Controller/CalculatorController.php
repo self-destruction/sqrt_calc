@@ -43,29 +43,20 @@ class CalculatorController extends Controller
     {
         $form = $this->createForm(DisplayType::class);
 
-        // Check equation exists in the url and set it into the form field.
-        if ($request->get('equation')) {
-            $form->get('equation')->setData($request->get('equation'));
+        if ($request->get('equation') !== null) {
+            $form->get('equation')->setData((string)$request->get('equation'));
         }
 
         $form->handleRequest($request);
 
-        // Handle form submission and parse equation through to the url
         if ($form->isSubmitted()) {
             return $this->redirectToRoute('result', ['equation' => $form->get('equation')->getData()]);
         }
 
-        $calculator = $this->get(Calculator::class);
-//        $calculator->setEquation($request->get('equation'));
         $equation = (string)$request->get('equation');
-//        var_dump($equation);
-
-//        echo "calculator->getEquation()\n";
-//        var_dump($calculator->getEquation());
-
         $engine = new Engine('YTV5WQ-TP29ARPJ2W');
 
-        $result = $engine->process('Floor(sqrt(' . $equation . '), 1E-5)', [], ['plaintext']); //&includepodid=DecimalApproximation
+        $result = $engine->process('Floor(sqrt(' . $equation . '),1E-6)', [], ['plaintext']); //&includepodid=DecimalApproximation
 
         if($result->hasWarnings())
         {
@@ -75,7 +66,7 @@ class CalculatorController extends Controller
             }
         }
 
-        echo 'Result success? ' . (string)$result->success . "\n";
+//        echo 'Result success? ' . (string)$result->success . "\n";
 
         if($result->hasError())
         {
@@ -87,21 +78,56 @@ class CalculatorController extends Controller
 //        var_dump($result->pods['DecimalApproximation']->subpods[0]->plaintext);
 
 //        var_dump($result->pods['Result']->subpods[0]->plaintext);
+//        var_dump($result->pods['Result']->subpods);
 //        foreach ($result->pods['DecimalApproximation']->subpods as $subpods) {
 //            var_dump($subpods);
 //        }
-        $result = [];
 
-        foreach ($result->pods['Result']->subpods as $subpod) {
-            $result[] = implode('*', explode(' ', $subpod->plaintext));
+//        var_dump((string)$result->pods['DecimalApproximation']);
+
+//        $answer = explode(' ', $result->pods['DecimalApproximation']->subpods[0]->plaintext);
+//        var_dump($result->pods['DecimalApproximation']->subpods[0]->plaintext);
+
+        $text = $result->pods['DecimalApproximation']->subpods[0]->plaintext;
+
+        if ($result->pods['DecimalApproximation']->subpods[0]->plaintext === null
+            && $result->pods['Result']->subpods[0]->plaintext !== null) {
+            $text = $result->pods['Result']->subpods[0]->plaintext;
+        }
+//        var_dump($text);
+//        $answer = explode(' ', $text);
+//
+//        $res = [];
+//        $res[0] = implode('*', $answer);
+//        $res[1] = '-' . implode('*', $answer);
+        $text = str_replace(" i", " * i", $text);
+
+        $res[0] = $text;
+        $res[1] = '-' . $text;
+
+        if ($text === '0' || $text === '') {
+            $res[1] = '';
         }
 
-        var_dump($result);
+        if ($result->hasProblems()) {
+            $res[0] = 'Некорректные данные';
+            $res[1] = '';
+        }
+
+        if (substr($res[0], 1, 4) === 'loor') {
+            $res[0] = 'sqrt(' . $equation . ')';
+            $res[1] = '';
+        }
+
+//        echo 'Result success? ' . (string)$result->success . "\n";
+
+//        var_dump($res);
 
         return $this->render('calculator.twig', [
             'form' => $form->createView(),
-            'equation' => $calculator->getEquation(),
-            'result' => $result->pods['DecimalApproximation']->subpods[0]->plaintext,
+            'equation' => $equation,
+            'result_1' => $res[0],
+            'result_2' => $res[1]
         ]);
     }
 }

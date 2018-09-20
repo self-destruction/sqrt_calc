@@ -19,6 +19,9 @@
             background: #999;
             padding: 0.25em;
         }
+        .h-50 {
+            margin-top: 90px;
+        }
     </style>
 {% endblock %}
 
@@ -38,8 +41,10 @@
 
 {% block body %}
 <div class="container h-100">
-    <div class="Calculator row h-50 row align-items-center">
+    <div class="Calculator row h-50 row align-items-top">
         <div class="w-100">
+            <div>Введите строку для извлечения
+                корня</div>
             {{ form_start(form) }}
             <div class="input-group">
                 {{ form_widget(form.equation) }}
@@ -50,11 +55,13 @@
             {{ form_end(form) }}
         </div>
         <div class="w-100">
-            {{ result }}
+            <div>
+                {{ result_1 }}
+            </div>
+            <div>
+                {{ result_2 }}
+            </div>
         </div>
     </div>
 </div>
-    <footer>
-        e.g. (1+5) * (3+2) / 5
-    </footer>
 {% endblock %}
