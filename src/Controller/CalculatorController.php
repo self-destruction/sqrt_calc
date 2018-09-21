@@ -41,13 +41,12 @@ class CalculatorController extends Controller
         }
 
         return $this->render('calculator.twig', [
-            'form' => $form->createView(),
-            'result' => 0
+            'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/{equation}",  name="result", requirements={"equation" = ".+"})
+     * @Route("/{equation}", defaults={"page": "1", "_format"="html"}, methods={"GET"},  name="result", requirements={"equation" = ".+"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      *

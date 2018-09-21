@@ -18,7 +18,8 @@ class DisplayType extends AbstractType
                     ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => '='
-            ]);
+                'label' => '=',
+            ])
+            ->setMethod('GET');
     }
 }
