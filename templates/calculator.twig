@@ -3,12 +3,10 @@
 
 {% block stylesheets %}
     <style>
-
         * {
             font-size: 1.0em;
             font-family: 'Courier';
         }
-
         footer {
             font-size: 0.4em;
             color: #fff;
@@ -43,8 +41,9 @@
 <div class="container h-100">
     <div class="Calculator row h-50 row align-items-top">
         <div class="w-100">
-            <div>Введите строку для извлечения
-                корня</div>
+            <div>
+                {% trans %}Enter the string to extract the radical{% endtrans %}
+            </div>
             {{ form_start(form) }}
             <div class="input-group">
                 {{ form_widget(form.equation) }}

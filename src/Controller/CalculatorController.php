@@ -2,20 +2,32 @@
 
 namespace App\Controller;
 
-use App\Calculator\Calculator;
 use App\Form\Calculator\DisplayType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use WolframAlpha\Engine;
 
+/**
+ * The controller used to perform the calculations.
+ *
+ * @Route("/")
+ *
+ * @author Maxim Syrchikov <syrchikov_max@mail.ru>
+ * @author Artyom Zavyalov <artyom2406@gmail.com>
+ * @author Natalya Ivonina <ivonata@bk.ru>
+ */
 class CalculatorController extends Controller
 {
+    const WOLFRAM_APP_ID = 'YTV5WQ-TP29ARPJ2W';
+
     /**
-     * @Route("/", name="calculator")
+     * @Route("/", defaults={"page": "1", "_format"="html"}, methods={"GET"}, name="initializeForm")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
-     */
+     *
+     * The method initializes the form
+     */ //initializeForm
     public function indexAction(Request $request)
     {
         $form = $this->createForm(DisplayType::class);
@@ -38,9 +50,12 @@ class CalculatorController extends Controller
      * @Route("/{equation}",  name="result", requirements={"equation" = ".+"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
-     */
+     *
+     * The method refers to Wolfram API and computes the square root calculation
+     */ //calculateSqrt
     public function resultAction(Request $request)
     {
+//        echo $request->getLocale();
         $form = $this->createForm(DisplayType::class);
 
         if ($request->get('equation') !== null) {
@@ -54,7 +69,7 @@ class CalculatorController extends Controller
         }
 
         $equation = (string)$request->get('equation');
-        $engine = new Engine('YTV5WQ-TP29ARPJ2W');
+        $engine = new Engine(self::WOLFRAM_APP_ID);
 
         $result = $engine->process('Floor(sqrt(' . $equation . '),1E-6)', [], ['plaintext']); //&includepodid=DecimalApproximation
 
@@ -66,27 +81,10 @@ class CalculatorController extends Controller
             }
         }
 
-//        echo 'Result success? ' . (string)$result->success . "\n";
-
         if($result->hasError())
         {
             echo 'Error ' . $result->getError()['code'] . ': ' . $result->getError()['message'];
         }
-
-//        echo 'Floor(sqrt(' . $equation . '), 1E-5)'. "\n";
-
-//        var_dump($result->pods['DecimalApproximation']->subpods[0]->plaintext);
-
-//        var_dump($result->pods['Result']->subpods[0]->plaintext);
-//        var_dump($result->pods['Result']->subpods);
-//        foreach ($result->pods['DecimalApproximation']->subpods as $subpods) {
-//            var_dump($subpods);
-//        }
-
-//        var_dump((string)$result->pods['DecimalApproximation']);
-
-//        $answer = explode(' ', $result->pods['DecimalApproximation']->subpods[0]->plaintext);
-//        var_dump($result->pods['DecimalApproximation']->subpods[0]->plaintext);
 
         $text = $result->pods['DecimalApproximation']->subpods[0]->plaintext;
 
@@ -110,7 +108,7 @@ class CalculatorController extends Controller
         }
 
         if ($result->hasProblems()) {
-            $res[0] = 'Некорректные данные';
+            $res[0] = 'Incorrect data.';
             $res[1] = '';
         }
 
