@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dd73d2f-dac6-4840-9d33-c8811a62fd1b" name="Default" comment="fix post on submit">
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/api_doc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.es.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.zh.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="7dd73d2f-dac6-4840-9d33-c8811a62fd1b" name="Default" comment="полиязычность">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CalculatorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CalculatorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.ru.yml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.ru.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/calculator.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/calculator.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.en.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.es.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.es.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.ru.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.ru.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.zh.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.zh.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,10 +40,10 @@
           <entry key="json" value="2" />
           <entry key="php" value="53" />
           <entry key="rnc" value="1" />
-          <entry key="twig" value="4" />
+          <entry key="twig" value="5" />
           <entry key="xlf" value="2" />
           <entry key="xml" value="1" />
-          <entry key="yaml" value="21" />
+          <entry key="yaml" value="25" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
@@ -61,9 +52,9 @@
           <entry key="PHP" value="54" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="RNG Compact" value="1" />
-          <entry key="Twig" value="4" />
+          <entry key="Twig" value="5" />
           <entry key="XML" value="1" />
-          <entry key="YAML" value="25" />
+          <entry key="YAML" value="29" />
           <entry key="composer.json" value="2" />
         </counts>
       </usages-collector>
@@ -76,19 +67,19 @@
         <counts>
           <entry key="PHP Console" value="1" />
           <entry key="php" value="1572" />
-          <entry key="twig" value="82" />
-          <entry key="txt" value="112" />
+          <entry key="twig" value="153" />
+          <entry key="txt" value="128" />
           <entry key="xlf" value="43" />
-          <entry key="yaml" value="175" />
+          <entry key="yaml" value="182" />
           <entry key="yml" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PHP" value="1573" />
-          <entry key="PLAIN_TEXT" value="155" />
-          <entry key="Twig" value="82" />
-          <entry key="YAML" value="222" />
+          <entry key="PLAIN_TEXT" value="171" />
+          <entry key="Twig" value="153" />
+          <entry key="YAML" value="229" />
         </counts>
       </usages-collector>
     </session>
@@ -98,11 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CalculatorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+            <state relative-caret-position="130">
+              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
               <folding>
                 <element signature="e#34#70#0#PHP" expanded="true" />
               </folding>
@@ -111,10 +102,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/services.yaml">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="76" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="76" />
+            <state relative-caret-position="30">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/calculator.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,31 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/translations/messages.en.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes/dev/web_profiler.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes/dev/api_doc.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -154,26 +134,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/translations/messages.ru.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="37" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+        <entry file="file://$PROJECT_DIR$/translations/messages.zh.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="30">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/config.yaml">
+        <entry file="file://$PROJECT_DIR$/translations/messages.es.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            <state relative-caret-position="30">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -211,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/calculator/form.html.twig" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/config/routes/annotations.yaml" />
         <option value="$PROJECT_DIR$/src/Kernel.php" />
@@ -253,15 +232,16 @@
         <option value="$PROJECT_DIR$/tests/Controller/CalculatorControllerTest.php" />
         <option value="$PROJECT_DIR$/config/bundles.php" />
         <option value="$PROJECT_DIR$/config/routing.yml" />
-        <option value="$PROJECT_DIR$/templates/calculator.twig" />
         <option value="$PROJECT_DIR$/translations/messages.en.yml" />
-        <option value="$PROJECT_DIR$/translations/messages.ru.yaml" />
         <option value="$PROJECT_DIR$/config/routes/dev/api_doc.yaml" />
-        <option value="$PROJECT_DIR$/src/Controller/CalculatorController.php" />
         <option value="$PROJECT_DIR$/config/packages/translation.yaml" />
         <option value="$PROJECT_DIR$/config/config.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/CalculatorController.php" />
+        <option value="$PROJECT_DIR$/translations/messages.en.yaml" />
+        <option value="$PROJECT_DIR$/translations/messages.ru.yaml" />
         <option value="$PROJECT_DIR$/translations/messages.zh.yaml" />
         <option value="$PROJECT_DIR$/translations/messages.es.yaml" />
+        <option value="$PROJECT_DIR$/templates/calculator.twig" />
       </list>
     </option>
   </component>
@@ -654,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537519838221</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="полиязычность">
+      <created>1537537027205</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537537027205</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -681,10 +668,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102913000" />
+    <option name="totallyTimeSpent" value="104883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1586" height="862" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49565217" visible="true" weight="0.260078" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -742,7 +730,8 @@
     <MESSAGE value="change interface, change output" />
     <MESSAGE value="добавил обработку ошибок, изменил вёрстку" />
     <MESSAGE value="fix post on submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix post on submit" />
+    <MESSAGE value="полиязычность" />
+    <option name="LAST_COMMIT_MESSAGE" value="полиязычность" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/packages/dev/web_profiler.yaml">
@@ -987,13 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/calculator.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes/dev/web_profiler.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1004,45 +986,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="76" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.ru.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.zh.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.es.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="79" selection-start-column="79" selection-end-column="79" />
         </state>
       </provider>
     </entry>
@@ -1053,19 +1000,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.en.yaml">
+    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CalculatorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+        <state relative-caret-position="130">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
           <folding>
             <element signature="e#34#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.en.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.ru.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.zh.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.es.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/calculator.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

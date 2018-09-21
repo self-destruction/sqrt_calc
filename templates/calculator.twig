@@ -18,7 +18,12 @@
             padding: 0.25em;
         }
         .h-50 {
-            margin-top: 90px;
+            margin-top: 8em;
+        }
+        .output_calc {
+            padding: 0.25em;
+            border: 3px solid #d6d6d6; /* Параметры границы */
+            background: #f9f9f9; /* Цвет фона */
         }
     </style>
 {% endblock %}
@@ -55,10 +60,15 @@
         </div>
         <div class="w-100">
             <div>
-                {{ result_1 }}
+                {% trans %}Result{% endtrans %}
             </div>
-            <div>
-                {{ result_2 }}
+            <div class="output_calc" style="padding: 7px;">
+                <div>
+                    {{ result_1 }}
+                </div>
+                <div>
+                    {{ result_2 }}
+                </div>
             </div>
         </div>
     </div>
