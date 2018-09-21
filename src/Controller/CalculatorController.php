@@ -6,6 +6,7 @@ use App\Form\Calculator\DisplayType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Translation\TranslatorInterface;
 use WolframAlpha\Engine;
 
 /**
@@ -30,6 +31,8 @@ class CalculatorController extends Controller
      */ //initializeForm
     public function indexAction(Request $request)
     {
+//        echo $view['translator']->trans('Symfony is great');
+//        echo $request->getLocale();
         $form = $this->createForm(DisplayType::class);
 
         $form->handleRequest($request);
@@ -46,7 +49,7 @@ class CalculatorController extends Controller
     }
 
     /**
-     * @Route("/{equation}", defaults={"page": "1", "_format"="html"}, methods={"GET"},  name="result", requirements={"equation" = ".+"})
+     * @Route("/equation/{equation}", defaults={"page": "1", "_format"="html"}, methods={"GET"},  name="result", requirements={"equation" = ".+"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      *

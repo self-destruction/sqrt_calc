@@ -1,6 +1,12 @@
 framework:
-  default_locale: 'en'
+  default_locale: 'ru'
   translator:
     paths:
     - '%kernel.project_dir%/translations
-    translator: { fallback: en, ru }
+    translator: { fallback: en, ru, zh }
+nelmio_api_doc:
+  areas:
+    path_patterns: # an array of regexps
+    - ^/api(?!/doc$)
+    host_patterns:
+    - ^api\.
