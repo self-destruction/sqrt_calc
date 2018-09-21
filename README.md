@@ -2,7 +2,7 @@
 A calculator based on Symfony 4.1
 
 ## Introduction
-Калькулятор, вычисляющий квадратый корень при помощи Wolfram API
+Калькулятор, вычисляющий квадратый корень при помощи Wolfram API 
 
 ## Getting Up and running
 
